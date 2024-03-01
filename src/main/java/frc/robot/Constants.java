@@ -15,10 +15,10 @@ import frc.lib.config.SwerveModuleConstants;
 import static edu.wpi.first.units.Units.*;
 
 public final class Constants {
-    public static int grabFeedMotorId = 11;
-    public static int moveFeedMotorId = 13;
-    public static int launchMotorRId = 12;
-    public static int launchMotorLId = 14;
+    public static int grabFeedMotorId = 10;
+    public static int moveFeedMotorId = 12;
+    public static int launchMotorRId = 11;
+    public static int launchMotorLId = 13;
   public static final class Swerve {
 
     public static final double stickDeadband = 0.1;

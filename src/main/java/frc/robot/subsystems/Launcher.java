@@ -30,8 +30,9 @@ public class Launcher extends SubsystemBase {
         launchMotorL.setSmartCurrentLimit(38);
     }
     public void grabNote(){
-        grabFeedMotor.set(-0.3);
+        grabFeedMotor.set(0.3);
         moveFeedMotor.set(0.3);
+        launchMotorL.set(0.3);
     }
     public void stopGrab(){
         grabFeedMotor.set(0.0);
