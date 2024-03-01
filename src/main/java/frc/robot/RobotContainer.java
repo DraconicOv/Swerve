@@ -47,7 +47,7 @@ public class RobotContainer {
   /* Driver Buttons */
   private final Trigger zeroGyro = driver.button(2);
   private final Trigger robotCentric = driver.button(3);
-  private final Trigger liftSolenoid = driver.button(5);
+  private final Trigger liftSolenoid = driver.button(6);
   private final Trigger blockSolenoid = driver.button(1);
   private final Trigger grabNote = driver.button(7);
   private final Trigger launchNote = driver.button(8); 
@@ -60,15 +60,18 @@ public class RobotContainer {
    * The container for the robot. Contains subsystems, OI devices, and commands.
    */
   public RobotContainer() {
+    System.out.println(translationAxis);
+    System.out.println(strafeAxis);
+    System.out.println(rotationAxis);
     m_pneumatics.reverseLiftSolenoid();
     m_pneumatics.reverseBlockSolenoid();
     m_swerve.setDefaultCommand(
         new TeleopSwerve(
             m_swerve,
-            () -> -driver.getRawAxis(translationAxis),
+            () -> -driver.getRawAxis(-translationAxis),
             () -> -driver.getRawAxis(strafeAxis),
-            () -> -driver.getRawAxis(rotationAxis)/3,
-            () -> false));
+            () -> -driver.getRawAxis(rotationAxis-1)/3,
+            () -> robotCentric.getAsBoolean()));
 
     // Configure the button bindings
     configureButtonBindings();
@@ -102,7 +105,10 @@ public class RobotContainer {
     // far right stick up-- activate hooks
     // right stick down-- hooks down
     // left stick-- blockers up blockers down
-     
+    // 5 -> inverse 2
+    // 4 -> 3
+    // 1 -> inverse 1
+    // 0 -> 0
     zeroGyro.onTrue(new InstantCommand(() -> m_swerve.zeroGyro()));
     liftSolenoid.onTrue(new InstantCommand(() -> m_pneumatics.toggleLiftSolenoid()));
     liftSolenoid.onFalse(new InstantCommand(() -> m_pneumatics.toggleLiftSolenoid()));

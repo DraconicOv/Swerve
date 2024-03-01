@@ -15,7 +15,10 @@ import frc.lib.config.SwerveModuleConstants;
 import static edu.wpi.first.units.Units.*;
 
 public final class Constants {
-
+    public static int grabFeedMotorId = 11;
+    public static int moveFeedMotorId = 13;
+    public static int launchMotorRId = 12;
+    public static int launchMotorLId = 14;
   public static final class Swerve {
 
     public static final double stickDeadband = 0.1;
@@ -33,6 +36,9 @@ public final class Constants {
 
     // original: public static double mk4iL1DriveGearRatio = 1 / ((14.0 / 50.0) * (25.0 / 19.0) * (15.0 / 45.0));// 8.14.122807
     public static double mk4iL1DriveGearRatio = 6.75;
+  
+
+
 
     public static double mk4iL1TurnGearRatio = 1 / ((14.0 / 50.0) * (10.0 / 60.0));// 21.43 1/.046667
 

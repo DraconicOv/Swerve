@@ -1,4 +1,13 @@
 {
+  "HALProvider": {
+    "Other Devices": {
+      "SPARK MAX [9]": {
+        "header": {
+          "open": true
+        }
+      }
+    }
+  },
   "NTProvider": {
     "types": {
       "/FMSInfo": "FMSInfo",
@@ -10,7 +19,13 @@
     },
     "windows": {
       "/SmartDashboard/Field": {
+        "bottom": 1476,
+        "height": 8.210550308227539,
         "image": "C:\\Users\\boyle\\Downloads\\2160xDarkCroppedFixed.png",
+        "left": 150,
+        "right": 2961,
+        "top": 79,
+        "width": 16.541748046875,
         "window": {
           "visible": true
         }
